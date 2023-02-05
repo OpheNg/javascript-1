@@ -45,24 +45,30 @@ function playAgain(){
 }
 
 function game() {
+  let playerScore = 0;
+  let computerScore = 0;
 
-  let score = 0;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     let result = playRound(prompt("What will you chose ? :\n- rock\n- paper\n- scissors"));
     console.log(result);
     if (result.includes("Win")) {
-      score++;
+      playerScore ++;
+    }else if(result.includes("Lose")){
+      computerScore++;
     }
   }
-  if (score >= 3) {
-    console.log(`You win the game! You won ${score} rounds to 5 !`);
-    alert(`You win the game! You won ${score} rounds to 5 !`);
+  if (playerScore >= 3) {
+    console.log(`You win the game! Your score is ${playerScore} while Computer is ${computerScore}`);
+    alert(`You win the game! You won ${playerScore} rounds to ${computerScore} !`);
 
-  } else {
-    console.log(`You lost the game! You lost ${score} rounds to 5 !`);
-    alert(`You lost the game! You lost ${score} rounds on 5 !`);
+  }else if(playerScore == computerScore){
+    console.log(`It is a drawn: Your score is ${playerScore} and Computer score is also ${computerScore}`)
 
+  }else{
+    console.log(`You lost the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
+    alert(`You lost the game! You lost ${playerScore} rounds to ${computerScore} !`);
   }
+
   playAgain();
 }
 
@@ -70,9 +76,6 @@ let nickname = prompt("Welcome ! What is your name ?");
 let greetings = alert(`Hi ${nickname} ! Let's play !`);
 let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
 const computerSelection = computerPlay();
-let result = playRound(playerSelection, computerPlay());
-
-console.log(result);
-let score;
+//let result = playRound(playerSelection, computerPlay());
+console.log(playerSelection, computerSelection);
 game();
-console.log(score)

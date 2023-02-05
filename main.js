@@ -13,7 +13,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection !== "scissors") {
       alert('You can only enter : "rock", "paper", or "scissors" !');
       playerSelection = prompt("Enter 'rock', 'paper', or 'scissors':").toLowerCase();
-      playerSelection;
+      // playerSelection;
   }
 
   if (playerSelection === computerSelection) {
@@ -45,28 +45,29 @@ function playAgain(){
 }
 
 function game() {
-  let playerScore = 0;
-  let computerScore = 0;
 
+  let player = 0;
+  let computer = 0;
+  
   for (let i = 0; i < 5; i++) {
     let result = playRound(prompt("What will you chose ? :\n- rock\n- paper\n- scissors"));
     console.log(result);
     if (result.includes("Win")) {
-      playerScore ++;
+      player++;
     }else if(result.includes("Lose")){
-      computerScore++;
+      computer++;
     }
   }
-  if (playerScore >= 3) {
-    console.log(`You win the game! Your score is ${playerScore} while Computer is ${computerScore}`);
-    alert(`You win the game! You won ${playerScore} rounds to ${computerScore} !`);
+  if (player >= 3) {
+    console.log(`You win the game! Your score is ${player} while Computer is ${computer}`);
+    alert(`You win the game! You won ${player} rounds to 5 !`);
 
-  }else if(playerScore == computerScore){
-    console.log(`It is a drawn: Your score is ${playerScore} and Computer score is also ${computerScore}`)
+  }else if(player == computer){
+    console.log(`It is a drawn: You are ${player} and Computer also ${computer}`)
 
   }else{
-    console.log(`You lost the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
-    alert(`You lost the game! You lost ${playerScore} rounds to ${computerScore} !`);
+    console.log(`You lost the game! Your score is ${player} while Computer is ${computer}`);
+    alert(`You lost the game! You lost ${player} rounds on 5 !`);
   }
 
   playAgain();
@@ -74,8 +75,7 @@ function game() {
 
 let nickname = prompt("Welcome ! What is your name ?");
 let greetings = alert(`Hi ${nickname} ! Let's play !`);
-let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
+// let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
 const computerSelection = computerPlay();
-//let result = playRound(playerSelection, computerPlay());
-console.log(playerSelection, computerSelection);
+
 game();

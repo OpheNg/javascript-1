@@ -19,7 +19,6 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return `It's a tie! You both chose ${playerSelection} ! `;
   }
-
   else if (playerSelection === "rock" && computerSelection === "scissors" ||
              playerSelection === "paper" && computerSelection === "rock" ||
              playerSelection === "scissors" && computerSelection === "paper") {
@@ -46,30 +45,31 @@ function playAgain(){
 
 function game() {
 
-  let player = 0;
-  let computer = 0;
-  
+  let playerScore = 0;
+  let computerScore = 0;
+
   for (let i = 0; i < 5; i++) {
     let result = playRound(prompt("What will you chose ? :\n- rock\n- paper\n- scissors"));
     console.log(result);
+
     if (result.includes("Win")) {
-      player++;
+      playerScore ++;
     }else if(result.includes("Lose")){
-      computer++;
+      computerScore ++;
     }
   }
-  if (player >= 3) {
-    console.log(`You win the game! Your score is ${player} while Computer is ${computer}`);
-    alert(`You win the game! You won ${player} rounds to 5 !`);
 
-  }else if(player == computer){
-    console.log(`It is a drawn: You are ${player} and Computer also ${computer}`)
+  if (playerScore >= 3) {
+    console.log(`You win the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
+    alert(`You win the game! You won ${playerScore} rounds to 5 !`);
+
+  }else if(playerScore == computerScore){
+    console.log(`It is a drawn: Your score is ${player} and Computer score is also ${computer}`)
 
   }else{
-    console.log(`You lost the game! Your score is ${player} while Computer is ${computer}`);
-    alert(`You lost the game! You lost ${player} rounds on 5 !`);
+    console.log(`You lost the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
+    alert(`You lost the game! You lost ${playerScore} rounds on 5 !`);
   }
-
   playAgain();
 }
 
@@ -77,5 +77,4 @@ let nickname = prompt("Welcome ! What is your name ?");
 let greetings = alert(`Hi ${nickname} ! Let's play !`);
 // let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
 const computerSelection = computerPlay();
-
 game();

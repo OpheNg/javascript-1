@@ -45,6 +45,7 @@ function playAgain(){
 }
 
 function game() {
+
   let player = 0;
   let computer = 0;
   
@@ -76,8 +77,5 @@ let nickname = prompt("Welcome ! What is your name ?");
 let greetings = alert(`Hi ${nickname} ! Let's play !`);
 // let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
 const computerSelection = computerPlay();
-// let result = playRound(playerSelection, computerPlay());
-
-// console.log(result);
 
 game();

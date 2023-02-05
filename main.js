@@ -73,6 +73,11 @@ function game() {
 }
 
 
-let nickname = prompt("Welcome ! What is your name ?");
-let greetings = alert(`Hi ${nickname}! Let's play!`);
-game();
+let nickname = prompt("Welcome! What is your name?");
+if (nickname.trim() === "") {
+  alert("Oops! Your name can't be blank! Please enter your name again.");
+  nickname = prompt("Welcome! What is your name?");
+} else {
+  alert(`Hi ${nickname}! Let's play!`);
+}
+console.log(game());

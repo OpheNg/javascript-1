@@ -13,7 +13,6 @@ function playRound(playerSelection, computerSelection) {
     playerSelection !== "scissors") {
       alert('You can only enter : "rock", "paper", or "scissors" !');
       playerSelection = prompt("Enter 'rock', 'paper', or 'scissors':").toLowerCase();
-      // playerSelection;
   }
 
   if (playerSelection === computerSelection) {
@@ -44,14 +43,11 @@ function playAgain(){
 }
 
 function game() {
-  let nickname = prompt("Welcome ! What is your name ?");
   let playerScore = 0;
   let computerScore = 0;
   let computerSelection = computerPlay();
 
-  alert(`Hi ${nickname}! Let's play!`);
-
-  for (let i = 0; i < 5; i++) {
+   for (let i = 0; i < 5; i++) {
     let result = playRound(prompt("What will you choose?:\n- rock\n- paper\n- scissors"), computerSelection);
     console.log(result);
 
@@ -76,8 +72,7 @@ function game() {
   playAgain();
 }
 
-// let nickname = prompt("Welcome ! What is your name ?");
-// let greetings = alert(`Hi ${nickname} ! Let's play !`);
-// let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
-const computerSelection = computerPlay();
+
+let nickname = prompt("Welcome ! What is your name ?");
+let greetings = alert(`Hi ${nickname}! Let's play!`);
 game();

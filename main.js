@@ -61,7 +61,7 @@ function game() {
 
   if (playerScore >= 3) {
     console.log(`You win the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
-    alert(`You win the game! You won ${playerScore} rounds to 5 !`);
+    alert(`You win the game! You won ${playerScore} rounds on 5 !`);
 
   }else if(playerScore == computerScore){
     console.log(`It is a drawn: Your score is ${player} and Computer score is also ${computer}`)

@@ -44,12 +44,15 @@ function playAgain(){
 }
 
 function game() {
-
+  let nickname = prompt("Welcome ! What is your name ?");
   let playerScore = 0;
   let computerScore = 0;
+  let computerSelection = computerPlay();
+
+  alert(`Hi ${nickname}! Let's play!`);
 
   for (let i = 0; i < 5; i++) {
-    let result = playRound(prompt("What will you chose ? :\n- rock\n- paper\n- scissors"));
+    let result = playRound(prompt("What will you choose?:\n- rock\n- paper\n- scissors"), computerSelection);
     console.log(result);
 
     if (result.includes("Win")) {
@@ -59,7 +62,7 @@ function game() {
     }
   }
 
-  if (playerScore >= 3) {
+  if (playerScore > computerScore) {
     console.log(`You win the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
     alert(`You win the game! You won ${playerScore} rounds on 5 !`);
 
@@ -73,8 +76,8 @@ function game() {
   playAgain();
 }
 
-let nickname = prompt("Welcome ! What is your name ?");
-let greetings = alert(`Hi ${nickname} ! Let's play !`);
+// let nickname = prompt("Welcome ! What is your name ?");
+// let greetings = alert(`Hi ${nickname} ! Let's play !`);
 // let playerSelection = prompt("What will you chose ? :\n- rock\n- paper\n- scissors");
 const computerSelection = computerPlay();
 game();

@@ -60,14 +60,14 @@ function game() {
 
   if (playerScore > computerScore) {
     console.log(`You win the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
-    alert(`You win the game! You won ${playerScore} rounds on 5 !`);
+    alert(`You win the game! You won ${playerScore} rounds and computer won ${computerScore} round(s) !`);
 
   }else if(playerScore == computerScore){
-    console.log(`It is a drawn: Your score is ${playerScore} and Computer score is also ${computerScore}`)
+    console.log(`It is a drawn: Your score is ${playerScore} and Computer score is also ${computerScore}`);
 
   }else{
     console.log(`You lost the game! Your score is ${playerScore} while Computer score is ${computerScore}`);
-    alert(`You lost the game! You lost ${playerScore} rounds on 5 !`);
+    alert(`You lost the game! You lost ${playerScore} rounds and computer won ${computerScore} !`);
   }
   playAgain();
 }
@@ -80,4 +80,4 @@ if (nickname.trim() === "") {
 } else {
   alert(`Hi ${nickname}! Let's play!`);
 }
-console.log(game());
+game();

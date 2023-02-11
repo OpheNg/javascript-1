@@ -5,7 +5,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
+  playerSelection = playerSelection.toLowerCase().trim();
   computerSelection = computerPlay();
 
   while (playerSelection !== "rock" &&
@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playAgain(){
-  let wannaPlay = prompt('Wanna play again ? \nType "yes" or "no"').toLowerCase();
+  let wannaPlay = prompt('Wanna play again ? \nType "yes" or "no"').toLowerCase().trim();
     if (wannaPlay === "yes"){
       game();
     }
